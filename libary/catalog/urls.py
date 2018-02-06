@@ -1,22 +1,20 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
 
 urlpatterns = [
-    url('', views.index, name='index'),
+    path('', views.index, name='index'),
 ]
 
 
 urlpatterns += [
-    url('books/', views.BookListView.as_view(), name='books'),
+    path('books/', views.BookListView.as_view(), name='books'),
+    path('book/<int:pk>', views.BookDetailView.as_view(), name='book-detail'),
 ]
 
 
 urlpatterns += [
-    url('book/<int:pk>', views.BookDetailView.as_view(), name='book-detail'),
+    path('authors/', views.AuthorListView.as_view(), name='author')
 ]
 
 
-urlpatterns += [
-    url('author/', views.AuthorListView.as_view(), name='author')
-]

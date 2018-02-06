@@ -28,7 +28,6 @@ def index(request):
 
 class BookListView(ListView):
     model = Book
-    paginate_by = 10
 
 
 class BookDetailView(DetailView):

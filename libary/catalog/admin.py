@@ -18,7 +18,7 @@ class BookAdmin(admin.ModelAdmin):
 
 class BookInstanceAdmin(admin.ModelAdmin):
     list_display = ('id', 'book', 'status')
-    list_filter = ('status', 'due_back','book')
+    list_filter = ('status', 'due_back', 'book')
     fieldsets = (
         (None, {
             'fields': ('book', 'imprint', 'id')
